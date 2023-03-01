@@ -19,14 +19,14 @@ DEPS = $(SRC_FILES:%.cpp=$(OBJS_DIR)/%.d)
  #=============================================================================#
 
 CC = c++
-CFLAGS = -g3 -std=c++98 -Wall -Wextra -Werror
+CFLAGS = -g3 -std=c++98 # -Wall -Wextra -Werror
 CDFLAGS = -MMD -MP
 
  #=============================================================================#
 #									MAKEFILE									#
  #=============================================================================#
 
-NAME = phonebook
+NAME = Accounts
 
 all : $(NAME)
 
@@ -34,7 +34,7 @@ $(NAME) : $(OBJS_DIR) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(CLFLAGS) -o $(NAME)
 
 $(OBJS_DIR) :
-	mkdir $(OBJS_DIR)
+	mkdir -p $(OBJS_DIR)
 
 $(OBJS) : $(OBJS_DIR)/%.o : %.cpp
 	$(CC) $(CFLAGS) $(CDFLAGS) -c $< -o $@

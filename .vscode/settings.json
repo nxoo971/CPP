@@ -33,6 +33,10 @@
 		"array": "cpp",
 		"tuple": "cpp",
 		"utility": "cpp",
-		"cstring": "cpp"
+		"cstring": "cpp",
+		"functional": "cpp",
+		"vector": "cpp",
+		"deque": "cpp",
+		"unordered_map": "cpp"
 	}
 }
