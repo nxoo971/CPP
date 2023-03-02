@@ -4,7 +4,7 @@
 
 MAIN_DIR		= ./
 
-SRC_FILES = $(addprefix $(MAIN_DIR), main.cpp Account.cpp)
+SRC_FILES = $(addprefix $(MAIN_DIR), tests.cpp Account.cpp)
 
  #=============================================================================#
 #									OBJETS										#

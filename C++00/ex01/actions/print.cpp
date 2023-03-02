@@ -6,7 +6,7 @@
 /*   By: jewancti <jewancti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 09:17:25 by jewancti          #+#    #+#             */
-/*   Updated: 2023/02/23 09:47:33 by jewancti         ###   ########.fr       */
+/*   Updated: 2023/03/02 09:42:44 by jewancti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	printFormat(T value)
 
 	std :: ostringstream ss;
 	ss << value;
-    std ::string text = ss.str();
+    std :: string text = ss.str();
 	int	length = text.length();
 	if (length <= precision)
 		std :: cout << std :: right << std :: setw(precision) << text << "|";
@@ -49,6 +49,7 @@ void	printContact(const Contact& contact, const int index, bool selected)
 	printFormat(contact.getNickName());
 	if (selected) {
 		printFormat(contact.getPhoneNumber());
+		//printFormat(contact.getDarkestSecret());
 		std :: cout << "sorry, dont know what ya mean";
 	}
 }
