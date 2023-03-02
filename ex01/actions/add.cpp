@@ -6,7 +6,7 @@
 /*   By: jewancti <jewancti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 09:17:25 by jewancti          #+#    #+#             */
-/*   Updated: 2023/02/23 09:46:39 by jewancti         ###   ########.fr       */
+/*   Updated: 2023/03/02 06:41:55 by jewancti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,14 @@ void	add(PhoneBook &p)
 	};
 
 	Contact	contact;
-	for (int i = 0; i < SETTERS_SIZE; i++) {
+	int	i = 0;
+	for (; i < SETTERS_SIZE; i++) {
 		std :: cout << setters[i] << ":" << std :: endl;
-		add[i](contact, get_input(false));
+		const std :: string	input = get_input(false, setters[i] == "Phone number");
+		add[i](contact, input);
 	}
-	p.setContact(contact);
+	if (i == SETTERS_SIZE) {
+		p.setContact(contact);
+		std :: cout << "Contact added" << std :: endl;
+	}
 }

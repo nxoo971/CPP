@@ -6,7 +6,7 @@
 /*   By: jewancti <jewancti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:31:36 by jewancti          #+#    #+#             */
-/*   Updated: 2023/02/23 09:33:02 by jewancti         ###   ########.fr       */
+/*   Updated: 2023/03/02 06:45:14 by jewancti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static
 void	print_menu(void)
 {
 	std :: cout << "Available options:" << std :: endl;
-	std :: cout << "\t[\tADD\t]" << std :: endl;
-	std :: cout << "\t[\tSEARCH\t]" << std :: endl;
-	std :: cout << "\t[\tEXIT\t]" << std :: endl;
+	std :: cout << "- ADD" << std :: endl;
+	std :: cout << "- SEARCH" << std :: endl;
+	std :: cout << "- EXIT" << std :: endl;
 }
 
 static
@@ -36,14 +36,17 @@ std :: string	get_input(bool isspace, bool numeric)
 
 	for (;;)
 	{
-		std :: cin >> input;
-		if (! std :: cin)
+		std :: getline(std :: cin, input);
+		if (std :: cin.eof())
 			exit(0);
 		if (is_valid(input, & std :: isspace)) {
 			const int	isnumeric = !is_valid(input, & std :: isdigit);
 			if ((!numeric && !isnumeric) || (numeric && isnumeric))
 				break ;
-		} else if (isspace) return "";
+			std :: cout << "Input should be " << (numeric ? "numeric" : "alphabetic") << " type" << std :: endl;
+		}
+		else if (isspace) return "";
+		else std :: cout << "Input cannot be empty" << std :: endl;
 	}
 	return (input);
 }
