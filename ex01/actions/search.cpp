@@ -6,7 +6,7 @@
 /*   By: jewancti <jewancti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 09:17:25 by jewancti          #+#    #+#             */
-/*   Updated: 2023/02/23 09:47:57 by jewancti         ###   ########.fr       */
+/*   Updated: 2023/03/02 07:10:44 by jewancti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,17 @@ void	search(const PhoneBook& rep)
 	const	Contact	*contacts	= rep.getContacts();
 	const	int		size		= rep.getCurrentSize();
 
+	if (size == 0) {
+		std :: cout << "PhoneBook is empty" << std :: endl;
+		return ;
+	}
 	std :: cout << "PhoneBook: " << std :: endl;
 	printTitle();
 	printPhoneBook(rep);
-	if (size == 0)
-		return ;
 	for (;;)
 	{
-		std :: string	input;
 		std :: cout << "Select an index" << std :: endl;
-		std :: cin >> input;
-		if (! std :: cin)
-			return ;
+		const std :: string	input = get_input(false, true);
 		int index = isNumber(input);
 		if (index > -1 && index < size)
 		{

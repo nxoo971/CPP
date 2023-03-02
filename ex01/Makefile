@@ -33,7 +33,7 @@ CDFLAGS = -MMD -MP
 #									MAKEFILE									#
  #=============================================================================#
 
-NAME = phonebook
+NAME = PhoneBook
 
 all : $(NAME)
 

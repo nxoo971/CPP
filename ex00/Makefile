@@ -4,7 +4,7 @@
 
 MAIN_DIR	= ./
 
-SRC_FILES = $(addprefix $(MAIN_DIR)/, megaphone.cpp)
+SRC_FILES = $(addprefix $(MAIN_DIR), megaphone.cpp)
 
  #=============================================================================#
 #									OBJETS										#
