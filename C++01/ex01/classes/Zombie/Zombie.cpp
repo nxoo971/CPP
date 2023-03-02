@@ -6,7 +6,7 @@
 /*   By: jewancti <jewancti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 17:24:20 by jewancti          #+#    #+#             */
-/*   Updated: 2023/03/02 21:05:45 by jewancti         ###   ########.fr       */
+/*   Updated: 2023/03/02 20:59:48 by jewancti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,9 @@ Zombie :: ~Zombie() { std :: cout << "Destructor called (" << this -> name << ")
 void	Zombie :: announce(void)
 {
 	std :: cout << this -> name << ": " << "BraiiiiiiinnnzzzZ..." << std :: endl;
+}
+
+void	Zombie :: setName(const std :: string& name)
+{
+	this -> name = name;
 }
