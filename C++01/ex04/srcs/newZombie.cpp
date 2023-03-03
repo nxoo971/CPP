@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jewancti <jewancti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 13:13:07 by jewancti          #+#    #+#             */
-/*   Updated: 2023/03/03 12:08:49 by jewancti         ###   ########.fr       */
+/*   Created: 2023/03/02 17:33:07 by jewancti          #+#    #+#             */
+/*   Updated: 2023/03/02 21:06:14 by jewancti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "./includes/Zombie.hpp"
+# include "./../includes/Zombie.hpp"
 
-int	main(void)
+Zombie	*newZombie(std :: string name)
 {
-	Zombie	zomb("test");
-
-	zomb.announce();
-	Zombie *test = newZombie("sheesh");
-	test -> announce();
-	delete test;
-	randomChump("un nom");
-	std :: cout << "\t-----------------------" << std :: endl;
-	const int size = -1;
-	Zombie	*zombies = zombieHorde(size, "Sheeesh 37");
-	if (zombies) {
-		printHorde(zombies, size);
-		delete [] zombies;
-	}
-	return (0);
+	return (new Zombie(name));
 }

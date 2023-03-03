@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jewancti <jewancti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 13:13:07 by jewancti          #+#    #+#             */
-/*   Updated: 2023/03/03 12:08:49 by jewancti         ###   ########.fr       */
+/*   Created: 2023/03/02 17:24:20 by jewancti          #+#    #+#             */
+/*   Updated: 2023/03/02 21:05:45 by jewancti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "./includes/Zombie.hpp"
+# include "./../../includes/Zombie.hpp"
 
-int	main(void)
+Zombie :: Zombie(void) { }
+
+Zombie :: Zombie(std :: string name)
 {
-	Zombie	zomb("test");
+	this -> name = name;
+}
 
-	zomb.announce();
-	Zombie *test = newZombie("sheesh");
-	test -> announce();
-	delete test;
-	randomChump("un nom");
-	std :: cout << "\t-----------------------" << std :: endl;
-	const int size = -1;
-	Zombie	*zombies = zombieHorde(size, "Sheeesh 37");
-	if (zombies) {
-		printHorde(zombies, size);
-		delete [] zombies;
-	}
-	return (0);
+Zombie :: ~Zombie() { std :: cout << "Destructor called (" << this -> name << ")" << std :: endl; }
+
+void	Zombie :: announce(void)
+{
+	std :: cout << this -> name << ": " << "BraiiiiiiinnnzzzZ..." << std :: endl;
 }
