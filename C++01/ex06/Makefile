@@ -30,7 +30,7 @@ CDFLAGS = -MMD -MP
 #									MAKEFILE									#
  #=============================================================================#
 
-NAME = Harl
+NAME = HarlFilter
 
 all : $(NAME)
 
